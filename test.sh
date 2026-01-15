@@ -13,14 +13,14 @@ NOTIFY='{"jsonrpc":"2.0","method":"notifications/initialized"}'
 LIST='{"jsonrpc":"2.0","id":2,"method":"tools/list"}'
 
 CALL='{
-  "jsonrpc": "2.0",  
-  "id": 3,  
-  "method": "tools/call",  
-  "params": {    
-    "name": "getSum",    
+  "jsonrpc": "2.0",
+  "id": 3,
+  "method": "tools/call",
+  "params": {
+    "name": "getSum",
     "arguments": {
-          "a": 15,      
-          "b": 27   
+          "a": 15,
+          "b": 27
    }}
 }'
 
@@ -34,4 +34,5 @@ CALL='{
   echo "$LIST"
   sleep 0.1
   echo "$(echo $CALL | yq -o json -M -I 0 )"
+  sleep 0.1
 ) | $EXE
